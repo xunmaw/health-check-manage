@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.health.check.admin.mapper.HealthInfoMapper">
+
+    <select id="listExcelInfo" resultType="com.health.check.admin.vo.HealthCheckExcelVO">
+        SELECT
+        hzsfz,tjrq,lrys,lrdw,create_time as createTime,tjlx,jctj,
+        zdytjbh,bz,zz,zz_qt as zzQt,ybzt_tw as ybztTw,ybzt_ml as ybztMl,ybzt_hxpl as ybztHxpl,
+        ybzt_xyzcssy as ybztXyzcssy,ybzt_xyzcszy as ybztXyzcszy,ybzt_xyycssy as ybztXyycssy,ybzt_xyycszy as ybztXyycszy,
+        ybzt_sg as ybztSg,ybzt_tz as ybztTz,ybzt_yw as ybztYw,ybzt_tunwei as ybztTunwei,ybzt_lnrjkztzwpg as ybztLnrjkztzwpg,
+        ybzt_lnrshzlnlzwpg as ybztLnrshzlnlzwpg,ybzt_lnrrzgn as ybztLnrrzgn,ybzt_jyzlztjc_zf as ybztJyzlztjcZf,
+        ybzt_lnrqgzt as ybztLnrqgzt,ybzt_lnryypfjc_zf as ybztLnryypfjcZf,shfs_tydl_dlpl as shfsTydlDlpl,
+        shfs_tydl_mcdlsj as shfsTydlMcdlsj,shfs_tydl_jcdlsj as shfsTydlJcdlsj,shfs_tydl_dlfs as shfsTydlDlfs,
+        shfs_ysxg as shfsYsxg,shfs_xyqk_xyzk as shfsXyqkXyzk,shfs_xyqk_rxyl as shfsXyqkRxyl,shfs_xyqk_ksxynl as shfsXyqkKsxynl,
+        shfs_xyqk_jynl as shfsXyqkJynl,shfs_yjqk_yjpl as shfsYjqkYjpl,shfs_yjqk_ryjl as shfsYjqkRyjl,shfs_yjqk_sfjj as shfsYjqkSfjj,
+        shfs_yjqk_jjnl as shfsYjqkJjnl,shfs_yjqk_ksyjnl as shfsYjqkKsyjnl,shfs_yjqk_jynnsfczj as shfsYjqkJynnsfczj,
+        shfs_yjqk_yjzl as shfsYjqkYjzl,shfs_yjqk_yjzl_qt as shfsYjqkYjzlQt,shfs_zybwhysjcs_yw as shfsZybwhysjcsYw,
+        shfs_zybwhysjcs_gz as shfsZybwhysjcsGz,shfs_zybwhysjcs_cysjn as shfsZybwhysjcsCysjn,
+        shfs_Zybwhysjcs_fc as shfsZybwhysjcsFc,shfs_zybwhysjcs_fcffcs as shfsZybwhysjcsFcffcs,
+        shfs_zybwhysjcs_fcffcsms as shfsZybwhysjcsFcffcsms,shfs_zybwhysjcs_fswz as shfsZybwhysjcsFswz,
+        shfs_zybwhysjcs_fswzffcs as shfsZybwhysjcsFswzffcs,shfs_zybwhysjcs_fswzffcsms as shfsZybwhysjcsFswzffcsms,
+        shfs_zybwhysjcs_wlys as shfsZybwhysjcsWlys,shfs_zybwhysjcs_wlysffcs as shfsZybwhysjcsWlysffcs,
+        shfs_zybwhysjcs_wlysffcsms as shfsZybwhysjcsWlysffcsms,shfs_zybwhysjcs_hxwz as shfsZybwhysjcsHxwz,
+        shfs_zybwhysjcs_hxwzffcs as shfsZybwhysjcsHxwzffcs,
+        shfs_zybwhysjcs_hxwzffcsms as shfsZybwhysjcsHxwzffcsms,shfs_zybwhysjcs_qt as shfsZybwhysjcsQt,
+        shfs_zybwhysjcs_qtffcs as shfsZybwhysjcsQtffcs,shfs_zybwhysjcs_qtffcsms as shfsZybwhysjcsQtffcsms,
+        zqgn_kq_kc as zqgnKqKc,zqgn_kq_cl_zt as zqgnKqClZt,zqgn_kq_qc_zs as zqgnKqQcZs,zqgn_kq_qc_zx as zqgnKqQcZx,
+        zqgn_kq_qc_ys as zqgnKqQcYs,zqgn_kq_qc_yx as zqgnKqQcYx,zqgn_kq_quchi_zs as zqgnKqQuchiZs,zqgn_kq_quchi_zx as zqgnKqQuchiZx,
+        zqgn_kq_quchi_ys as zqgnKqQuchiYs,zqgn_kq_quchi_yx as zqgnKqQuchiYx,zqgn_kq_yc_jy_zs as zqgnKqYcJyZs,
+        zqgn_kq_yc_jy_zx as zqgnKqYcJyZx,zqgn_kq_yc_jy_ys as zqgnKqYcJyYs,zqgn_kq_yc_jy_yx as zqgnKqYcJyYx,
+        zqgn_kq_yb as zqgnKqYb,zqgn_sl_zy as zqgnSlZy,zqgn_sl_yy as zqgnSlYy,zqgn_sl_jzsl_zy as zqgnSlJzslZy,
+        zqgn_sl_jzsl_yy as zqgnSlJzslYy,zqgn_sl_qtslms as zqgnSlQtslms,zqgn_tl_zt as zqgnTlZt,zqgn_ydgnzt as zqgnYdgnzt,
+        xt_ydzt as xtYdzt,xt_ydyc as xtYdyc,xt_pfzt as xtPfzt,xt_pf_qt as xtPfQt,xt_gmzt as xtGmzt,xt_gm_qt as xtGmQt,
+        xt_lbjzt as xtLbjzt,xt_lbj_qt as xtLbjQt,xt_f_tzx as xtFTzx,xt_f_hxy as xtFHxy,xt_f_hxyms as xtFHxyms,
+        xt_f_ly as xtFLy,xt_f_ly_qt as xtFLyQt,xt_xz_xl_1 as xtXzXl1,xt_xz_xl_2 as xtXzXl2,xt_xz_zyyw as xtXzZyyw,
+        xt_xz_zyms as xtXzZyms,xt_fb_ytyw as xtFbYtyw,xt_fb_ytms as xtFbYtms,xt_fb_bkyw as xtFbBkyw,
+        xt_fb_bkms as xtFbBkms,xt_fb_gdyw as xtFbGdyw,xt_fb_gdms as xtFbGdms,xt_fb_pdyw as xtFbPdyw,
+        xt_fb_pdms as xtFbPdms,xt_fb_ydxzyyw as xtFbYdxzyyw,xt_fb_ydxzyms as xtFbYdxzyms,
+        xt_xzsz as xtXzsz,xt_zbdmbd as xtZbdmbd,xt_gmzz as xtGmzz,xt_gmzz_qt as xtGmzzQt,
+        xt_rx as xtRx,xt_rx_qt as xtRxQt,xt_fk_wy as xtFkWy,xt_fk_wyyc as xtFkWyyc,xt_fk_yd as xtFkYd,
+        xt_fk_ydyc as xtFkYdyc,xt_fk_gj as xtFkGj,xt_fk_gjyc as xtFkGjyc,xt_fk_gt as xtFkGt,
+        xt_fk_gtyc as xtFkGtyc,xt_fk_fj as xtFkFj,xt_fk_fjyc as xtFkFjyc,xt_qt as xtQt,fzjc_xcg_xhdb as fzjcXcgXhdb,
+        fzjc_xcg_bxb as fzjcXcgBxb,fzjc_xcg_xxb as fzjcXcgXxb,fzjc_xcg_hxb as fzjcXcgHxb,
+        fzjc_xcg_zxlxbjdz as fzjcXcgZxlxbjdz,fzjc_xcg_lbxbjdz as fzjcXcgLbxbjdz,fzjc_xcg_dhxbs as fzjcXcgDhxbs,
+        fzjc_xcg_ssxlxbs as fzjcXcgSsxlxbs,fzjc_xcg_sjxlxbs as fzjcXcgSjxlxbs,fzjc_xcg_qt as fzjcXcgQt,
+        fzjc_ncg_ndb as fzjcNcgNdb,fzjc_ncg_nt as fzjcNcgNt,fzjc_ncg_ntt as fzjcNcgNtt,fzjc_ncg_nqx as fzjcNcgNqx,
+        fzjc_ncg_nbxb as fzjcNcgNbxb,fzjc_ncg_ndhs as fzjcNcgNdhs,fzjc_ncg_nyxsy as fzjcNcgNyxsy,fzjc_ncg_qt as fzjcNcgQt,
+        fzjc_kfxtmmoll as fzjcKfxtmmoll,fzjc_chxt as fzjcChxt,fzjc_xdt_zt as fzjcXdtZt,fzjc_xdt_ycms as fzjcXdtYcms,
+        fzjc_xdt_xdtxl as fzjcXdtXdtxl,fzjc_xdt_xfl as fzjcXdtXfl,fzjc_xdt_bpmxsl as fzjcXdtBpmxsl,fzjc_xdt_dz as fzjcXdtDz,
+        fzjc_xdt_PRjq as fzjcXdtPRjq,fzjc_xdt_QRSsx as fzjcXdtQRSsx,fzjc_xdt_QTjq as fzjcXdtQTjq,fzjc_xdt_ms as fzjcXdtMs,
+        fzjc_xdt_ts as fzjcXdtTs,fzjc_xdt_xdtbgys as fzjcXdtXdtbgys,fzjc_xdt_qtxdtbgys as fzjcXdtQtxdtbgys,
+        fzjc_nwlbdb as fzjcNwlbdb,fzjc_dbqx as fzjcDbqx,fzjc_thxhdb as fzjcThxhdb,fzjc_yxgybmky as fzjcYxgybmky,
+        fzjc_ggn_xqgbzam as fzjcGgnXqgbzam,fzjc_ggn_xqgczam as fzjcGgnXqgczam,fzjc_ggn_bdb as fzjcGgnBdb,
+        fzjc_ggn_zdhs as fzjcGgnZdhs,fzjc_ggn_jhdhs as fzjcGgnJhdhs,fzjc_sgn_xqjg as fzjcSgnXqjg,
+        fzjc_sgn_ns as fzjcSgnNs,fzjc_sgn_xns as fzjcSgnXns,fzjc_sgn_xjnd as fzjcSgnXjnd,fzjc_sgn_xnnd as fzjcSgnXnnd,
+        fzjc_xz_zdgc as fzjcXzZdgc,fzjc_xz_gysz as fzjcXzGysz,fzjc_xz_xqdmdzdbdgc as fzjcXzXqdmdzdbdgc,
+        fzjc_xz_xqgmdzdbdgc as fzjcXzXqgmdzdbdgc,fzjc_xbXxp_zt as fzjcXbXxpZt,fzjc_xbXxp_ztyc as fzjcXbXxpZtyc,
+        fzjc_xbXxp_jcqkms as fzjcXbXxpJcqkms,fzjc_xbXxp_zdyj as fzjcXbXxpZdyj,fzjc_xbXxp_xgbgys as fzjcXbXxpXgbgys,
+        fzjc_xbXxp_qtXgbgys as fzjcXbXxpQtXgbgys,fzjc_bc_zt as fzjcBcZt,fzjc_bc_ztyc as fzjcBcZtyc,fzjc_Bc_jcbw as fzjcBcJcbw,
+        fzjc_Bc_jcbw_qt as fzjcBcJcbwQt,fzjc_bc_ms as fzjcBcMs,fzjc_bc_ts as fzjcBcTs,fzjc_bc_bcbgys as fzjcBcBcbgys,
+        fzjc_bc_qtBcbgys as fzjcBcQtBcbgys,fzjc_gjtp_zt as fzjcGjtpZt,fzjc_gjtp_ztyc as fzjcGjtpZtyc,fzjc_bdcg_qjd as fzjcBdcgQjd,
+        fzjc_bdcg_dc as fzjcBdcgDc,fzjc_bdcg_nqj as fzjcBdcgNqj,fzjc_zlsx_jtdbzt as fzjcZlsxJtdbzt,fzjc_zlsx_jtdbyxz as fzjcZlsxJtdbyxz,
+        fzjc_zlsx_apkyzt as fzjcZlsxApkyzt,fzjc_zlsx_apkyyxz as fzjcZlsxApkyyxz,fzjc_zlsx_aky50zt as fzjcZlsxAky50zt,
+        fzjc_zlsx_aky50yxz as fzjcZlsxAky50yxz,fzjc_EBbdktzt as fzjcEBbdktzt,fzjc_EBbdktyxz as fzjcEBbdktyxz,
+        fzjc_gxckt as fzjcGxckt,fzjc_gxcktdl as fzjcGxcktdl,fzjc_gyxjxlsm as fzjcGyxjxlsm,fzjc_qt as fzjcQt,
+        xczyjkwt_nxgjb as xczyjkwtNxgjb,xczyjkwt_nxgjb_qt as xczyjkwtNxgjbQt,xczyjkwt_szjb as xczyjkwtSzjb,
+        xczyjkwt_szjb_qt as xczyjkwtSzjbQt,xczyjkwt_xzjb as xczyjkwtXzjb,xczyjkwt_xzjb_qt as xczyjkwtXzjbQt,
+        xczyjkwt_xgjb as xczyjkwtXgjb,xczyjkwt_xgjb_qt as xczyjkwtXgjbQt,xczyjkwt_ybjb as xczyjkwtYbjb,
+        xczyjkwt_ybjb_qt as xczyjkwtYbjbQt,xczyjkwt_sjxtjb as xczyjkwtSjxtjb,xczyjkwt_sjxtjb_qt as xczyjkwtSjxtjbQt,
+        xczyjkwt_qtxtjb as xczyjkwtQtxtjb,xczyjkwt_qtxtjb_qt as xczyjkwtQtxtjbQt,zyzlqk_ryrq1 as zyzlqkRyrq1,
+        zyzlqk_cyrq1 as zyzlqkCyrq1,zyzlqk_zyyy1 as zyzlqkZyyy1,zyzlqk_zyyljgmc1 as zyzlqkZyyljgmc1,
+        zyzlqk_zyblh1 as zyzlqkZyblh1,zyzlqk_ryrq2 as zyzlqkRyrq2,zyzlqk_cyrq2 as zyzlqkCyrq2,
+        zyzlqk_zyyy2 as zyzlqkZyyy2,zyzlqk_zyyljgmc2 as zyzlqkZyyljgmc2,zyzlqk_zyblh2 as zyzlqkZyblh2,
+        zyzlqk_jcrq1 as zyzlqkJcrq1,zyzlqk_ccrq1 as zyzlqkCcrq1,zyzlqk_jcyy1 as zyzlqkJcyy1,zyzlqk_jcyljgmc1 as zyzlqkJcyljgmc1,
+        zyzlqk_jcblh1 as zyzlqkJcblh1,zyzlqk_jcrq2 as zyzlqkJcrq2,zyzlqk_ccrq2 as zyzlqkCcrq2,zyzlqk_jcyy2 as zyzlqkJcyy2,
+        zyzlqk_jcyljgmc2 as zyzlqkJcyljgmc2,zyzlqk_jcblh2 as zyzlqkJcblh2,zyyyqk_ywmc1 as zyyyqkYwmc1,zyyyqk_yf1 as zyyyqkYf1,
+        zyyyqk_qtyf1 as zyyyqkQtyf1,zyyyqk_yl1 as zyyyqkYl1,zyyyqk_jldw1 as zyyyqkJldw1,zyyyqk_yysj1 as zyyyqkYysj1,zyyyqk_yydw1 as zyyyqkYydw1,
+        zyyyqk_fycyx1 as zyyyqkFycyx1,zyyyqk_ywmc2 as zyyyqkYwmc2,zyyyqk_yf2 as zyyyqkYf2,zyyyqk_qtyf2 as zyyyqkQtyf2,zyyyqk_yl2 as zyyyqkYl2,
+        zyyyqk_jldw2 as zyyyqkJldw2,zyyyqk_yysj2 as zyyyqkYysj2,zyyyqk_yydw2 as zyyyqkYydw2,zyyyqk_fycyx2 as zyyyqkFycyx2,zyyyqk_ywmc3 as zyyyqkYwmc3,
+        zyyyqk_yf3 as zyyyqkYf3,zyyyqk_qtyf3 as zyyyqkQtyf3,zyyyqk_yl3 as zyyyqkYl3,zyyyqk_jldw3 as zyyyqkJldw3,zyyyqk_yysj3 as zyyyqkYysj3,
+        zyyyqk_yydw3 as zyyyqkYydw3,zyyyqk_fycyx3 as zyyyqkFycyx3,zyyyqk_ywmc4 as zyyyqkYwmc4,zyyyqk_yf4 as zyyyqkYf4,zyyyqk_qtyf4 as zyyyqkQtyf4,
+        zyyyqk_yl4 as zyyyqkYl4,zyyyqk_jldw4 as zyyyqkJldw4,zyyyqk_yysj4 as zyyyqkYysj4,zyyyqk_yydw4 as zyyyqkYydw4,zyyyqk_fycyx4 as zyyyqkFycyx4,
+        zyyyqk_ywmc5 as zyyyqkYwmc5,zyyyqk_yf5 as zyyyqkYf5,zyyyqk_qtyf5 as zyyyqkQtyf5,zyyyqk_yl5 as zyyyqkYl5,zyyyqk_jldw5 as zyyyqkJldw5,
+        zyyyqk_yysj5 as zyyyqkYysj5,zyyyqk_yydw5 as zyyyqkYydw5,zyyyqk_fycyx5 as zyyyqkFycyx5,zyyyqk_ywmc6 as zyyyqkYwmc6,zyyyqk_yf6 as zyyyqkYf6,
+        zyyyqk_qtyf6 as zyyyqkQtyf6,zyyyqk_yl6 as zyyyqkYl6,zyyyqk_jldw6 as zyyyqkJldw6,zyyyqk_yysj6 as zyyyqkYysj6,zyyyqk_yydw6 as zyyyqkYydw6,
+        zyyyqk_fycyx6 as zyyyqkFycyx6,fmyghyfjzs_jzmc1 as fmyghyfjzsJzmc1,fmyghyfjzs_jzrq1 as fmyghyfjzsJzrq1,fmyghyfjzs_jzjg1 as fmyghyfjzsJzjg1,
+        fmyghyfjzs_jzmc2 as fmyghyfjzsJzmc2,fmyghyfjzs_jzrq2 as fmyghyfjzsJzrq2,fmyghyfjzs_jzjg2 as fmyghyfjzsJzjg2,fmyghyfjzs_jzmc3 as fmyghyfjzsJzmc3,
+        fmyghyfjzs_jzrq3 as fmyghyfjzsJzrq3,fmyghyfjzs_jzjg3 as fmyghyfjzsJzjg3,jkpj_sfyc as jkpjSfyc,jkpj_yc1 as jkpjYc1,
+        jkpj_yc2 as jkpjYc2,jkpj_yc3 as jkpjYc3,jkpj_yc4 as jkpjYc4,jkpj_yc5 as jkpjYc5,jkpj_yc6 as jkpjYc6,jkpj_yc7 as jkpjYc7,
+        jkpj_yc8 as jkpjYc8,jkpj_yc9 as jkpjYc9,jkpj_yc10 as jkpjYc10,jkpj_yc11 as jkpjYc11,jkpj_yc12 as jkpjYc12,jkzd_zt as jkzdZt,
+        jkpj_qt as jkpjQt,wxyskz_zt as wxyskzZt,wxyskz_jtzmbb as wxyskzJtzmbb,wxyskz_jyjzym as wxyskzJyjzym,wxyskz_qt as wxyskzQt,
+        jkzd_cf as jkzdCf,shfm_jc as shfmJc, shfm_sx as shfmSx,shfm_cy as shfmCy,shfm_rc as shfmRc,shfm_hd as shfmHd
+        FROM health_info AS hi
+        LEFT JOIN health_xt_info AS hxi on hi.id = hxi.health_info_id
+        LEFT JOIN health_fzjc_info as hfi on hi.id = hfi.health_info_id
+        LEFT JOIN health_shfs_info as hsi on hi.id = hsi.health_info_id
+        LEFT JOIN health_zlyy_info as hzi on hi.id = hzi.health_info_id
+        where hi.deleted = 0
+        <if test="req.hzsfz != null and req.hzsfz != ''">
+            and hi.hzsfz = #{req.hzsfz}
+        </if>
+        <if test="req.hzmc != null and req.hzmc != ''">
+            and hi.hzmc = #{req.hzmc}
+        </if>
+        <if test="req.lrys != null and req.lrys != ''">
+            and hi.lrys = #{req.lrys}
+        </if>
+        <if test="req.lrdw != null and req.lrdw != ''">
+            and hi.lrdw = #{req.lrdw}
+        </if>
+        <if test="null != req.startDate">
+            and hi.tjrq >= #{req.startDate}
+        </if>
+        <if test="null != req.endDate">
+            and hi.tjrq <![CDATA[ <= ]]> #{req.endDate}
+        </if>
+    </select>
+
+</mapper>
